@@ -1,0 +1,59 @@
+{
+  "name": "@idapt/sdk",
+  "version": "1.5.0",
+  "description": "Idapt SDK — the typed, isomorphic client for the public v1 API.",
+  "license": "Apache-2.0",
+  "homepage": "https://idapt.app/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idapt/idapt-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idapt/idapt-sdk/issues"
+  },
+  "keywords": [
+    "idapt",
+    "api",
+    "sdk",
+    "typescript",
+    "v1",
+    "client"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dynamic": {
+      "types": "./dist/dynamic.d.ts",
+      "import": "./dist/dynamic.js",
+      "require": "./dist/dynamic.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5"
+  }
+}
